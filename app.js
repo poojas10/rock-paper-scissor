@@ -65,6 +65,12 @@ function winnerName() {
       }
     } else if (computerChoice === e.name && userSelectedIcon === e.beats) {
       winner = "computer";
+      score = JSON.parse(sessionStorage.getItem("score"));
+      score--;
+      if(score <=0){
+        score=0
+      }
+      sessionStorage.setItem("score", JSON.stringify(score));
     } else {
       if (computerChoice === userSelectedIcon) {
         winner = "draw";
