@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+ <div class="game-name">
+   <h1>ROCK</h1>
+   <h1>PAPER</h1>
+   <h1>SCISSORS</h1>
+ </div>
+ <div class="score-card">
+   <h4 class="score-title">SCORE</h4>
+   <h1 class="score">0</h1>
+ </div>
+  </header>
+  <main>
+    <div class="player-title">
+      <h3>YOU PICKED</h3>
+      <h3>THE HOUSE PICKED</h3>
+    </div>
+    <div class="user-choosingOptions">
+      <div class="row-icon">
+        <div class="paper-gradient gradient">
+         
+          <div class="paper-icon icons" id="paper">
+            <img src="./images/icon-paper.svg" alt="">
+          </div>
+       
+        </div>
+        <div class="scissors-gradient gradient">
+         
+          <div class="scissors-icon icons"  id="scissors">
+            <img src="./images/icon-scissors.svg" alt="">
+          </div>
+          
+        </div>
+      </div>
+      <div class="rock-gradient gradient">
+        
+        <div class="rock-icon icons" id="rock">
+          <img src="./images/icon-rock.svg" alt="">
+        </div>
+        
+      </div>
+    </div>
+    <div class="result-show">
+         <div class="computer-pick computer-gradient gradient">
+          <div class="computer-icon">
+          </div>
+        </div>
+    </div>
+    <div class="winner-announcement">
+      <h1 class="winner"></h1>
+   <button class="play-again">Play-again</button>
+    </div>
+  </main>
+  <!-- <div class="rules-section">
+    <button class="rules">RULES</button>
+  </div> -->
+  <script src="app.js"></script>
+</body>
+</html>

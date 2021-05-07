@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-size: 1.6rem;
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* HEADER SECTION */
+header {
+    border: 3px solid hsl(217, 16%, 45%);
+    margin: 2rem;
+    color: white;
+    border-radius: 20px;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 60vw;
+}
+
+.game-name h1 {
+    line-height: 3rem;
+}
+
+.score-title {
+    color: hsl(229, 64%, 46%);
+}
+
+.score {
+    color: hsl(229, 25%, 31%);
+    font-size: 6rem;
+}
+
+.score-card {
+    background: white;
+    padding: 1.5rem 3rem;
+    min-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* MAIN SECTION */
+main {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vw;
+}
+
+.user-choosingOptions {
+    background: url("./images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.result-show {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2,1fr); */
+    /* min-width: 60vw; */
+    grid-gap: 10px;
+}
+
+.row-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons,
+.computer-icon {
+    height: 17rem;
+    width: 17rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 4rem 0;
+    box-shadow: inset 0 6px 10px gray;
+    cursor: pointer;
+}
+
+.computer-icon {
+    background: transparent;
+    box-shadow: none;
+}
+
+.user-Options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid black;
+}
+
+.players {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100rem;
+    border: 1px solid white;
+}
+
+.gradient,
+.gradient-copy {
+    margin: 0 7rem;
+    height: 22rem;
+    width: 22rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 100%;
+
+    -webkit-animation: slide-bck-center 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+    animation: slide-bck-center 0.45s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+    animation-delay: 2s;
+}
+
+.gradient-copy {
+    margin: 0;
+}
+
+.gradient img {
+    height: 9rem;
+}
+
+.paper-gradient {
+    background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 49%, 75%));
+    box-shadow: inset 0 -10px 5px hsl(230, 89%, 58%);
+}
+
+.scissors-gradient {
+    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    box-shadow: inset 0 -10px 5px hsl(39, 88%, 33%);
+}
+
+.rock-gradient {
+    margin: auto;
+    background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: inset 0 -10px 5px hsl(349, 66%, 30%);
+}
+
+.rules-section {
+    width: 100%;
+    padding: 2rem 4rem;
+}
+
+.rules {
+    float: right;
+    padding: 1rem 3rem;
+    background: transparent;
+    outline: none;
+    border: 1px solid hsl(217, 16%, 45%);
+    color: white;
+    border-radius: 5px;
+}
+
+.computer-pick .icons {
+    /* background: hsl(237, 49%, 15%); */
+    background: transparent;
+    box-shadow: none;
+}
+
+.computer-pick {
+    display: none;
+    grid-area: 1/2;
+}
+
+.computer-gradient {
+    background: hsl(237, 49%, 15%);
+}
+
+.player-title {
+    /* border: 1px solid wheat; */
+    margin: 2rem 4rem;
+    width: 70vw;
+    /* padding:3rem 2rem 3rem 4rem ; */
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    display: none;
+}
+
+.player-title h3,
+.result-show div {
+    margin: auto;
+}
+
+.winner-announcement {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner-announcement button {
+    display: none;
+    margin: 2rem 0;
+    cursor: pointer;
+    padding: 1.5rem 5rem;
+    color: red;
+    border-radius: 10px;
+    border: none;
+}
+
+.aroundIcons {
+    position: relative;
+}
+
+.aroundIcons:before {
+    content: "";
+    height: 400px;
+    width: 400px;
+    border-radius: 100%;
+    top: -40%;
+    z-index: -1;
+    background-color: hsl(214, 47%, 23%);
+    position: absolute;
+    opacity: 0.8;
+}
+
+.winner-effect {
+    position: relative;
+}
+
+.winner {
+    color: white;
+}
+
+.winner-effect::after {
+    content: "";
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    top: -20%;
+    z-index: -1;
+    background-color: hsl(213, 43%, 20%);
+    position: absolute;
+    opacity: 0.6;
+}
+
+@media screen and(min-width:800px) {
+    .result-show.small-screen {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .result-show {
+        padding: 2rem 15rem;
+    }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-5-6 18:55:56
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-bck-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-bck-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(-400px);
+        transform: translateZ(-400px);
+    }
+}
+
+@keyframes slide-bck-center {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    100% {
+        -webkit-transform: translateZ(-400px);
+        transform: translateZ(-400px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .row-icon div {
+        margin: 0 2rem;
+    }
+
+    .row-icon {
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        min-width: 90vw;
+    }
+
+    .winner-announcement {
+        grid-area: 2/2;
+    }
+
+    .winner-announcement button {
+        padding: 1.5rem 3rem;
+    }
+
+    .result-show {
+        grid-gap: 10px;
+        padding: 2rem 5rem;
+    }
+
+    .player-title {
+        width: 100%;
+    }
+}
+
+.player-title {
+    z-index: 3;
+}
+
+.winner-announcement {
+    z-index: 99;
+}
