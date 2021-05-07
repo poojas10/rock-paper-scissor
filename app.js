@@ -155,13 +155,13 @@ function winningPageStyling(user) {
       } else if (winner === "draw") {
         document.querySelector(".winner").textContent = "DRAW";
       }
-      for (let i = 0; i < resultDisplay.children.length - 1; i++) {
+      document.querySelector(".player-title").style.width = "100vw";
+      for (let i = 0; i < resultDisplay.children.length; i++) {
         if (resultDisplay.children[i].classList.contains(`${winner}`)) {
           resultDisplay.children[i].classList.add("aroundIcons");
           resultDisplay.children[i].classList.add("winner-effect");
         }
       }
-      document.querySelector(".player-title").style.width = "100vw";
       if (sessionStorage.getItem("score") !== null) {
         document.querySelector(".score").textContent = JSON.parse(
           sessionStorage.getItem("score")
@@ -216,3 +216,13 @@ window.addEventListener("resize", function () {
     document.querySelector(".winner-announcement").style.gridArea = "1/2";
   }
 });
+var mq = window.matchMedia("(max-width: 800px)");
+if (mq.matches) {
+  resultDisplay.style.gridTemplateColumns = "1fr 1fr";
+  resultDisplay.style.padding = "2rem 5rem";
+  resultDisplay.style.gridGap = "20px";
+  document.querySelector(".player-title").style.width = "100vw";
+  document.querySelector(".winner-announcement").style.gridArea = "2/2";
+} else {
+  document.querySelector(".winner-announcement").style.gridArea = "1/2";
+}
